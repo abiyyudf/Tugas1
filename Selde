@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    
+ public static void main(String[] args) {
+    Scanner s = new Scanner(System.in);
+    int num = s.nextInt();
+    int nomor = num;
+    int rev = 0;
+    
+    while(num!=0)
+    { 
+        rev = rev*10 + num%10;
+        num = num/10;
+    }
+    
+    if(nomor==rev)
+    {
+        System.out.println(nomor+ " adalah selde.");
+    }
+    else
+    {
+        System.out.println(nomor+ " bukan selde.");
+    }
+    }
+}
