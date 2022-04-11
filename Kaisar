@@ -1,0 +1,45 @@
+import java.io.*;
+import java.util.*;
+
+  public class chipterText {
+   public static void main(String[] args) {
+   Scanner s = new Scanner (System.in);
+   String alpabet = s.nextLine();
+   int nilai = s.nextInt();
+   System.out.println(Kaisar(alpabet, nilai));
+    }
+
+    public static String Kaisar(String alfabet, int text){
+        String chipertext="";
+        int length = alfabet.length();
+        if(text > 26)
+           text = text % 26;
+        else if(text < 0)
+        text = (text % 26) + 26;
+        for (int i = 0; i < length; i++)
+        {
+            char ch = alfabet.charAt(i);
+            if(Character.isLetter(ch))
+            {
+                if (Character.isUpperCase(ch))
+                {
+                    char x = (char)(ch + text);
+                    if(x > 'Z')
+                        chipertext += (char)(ch - (26 - text));
+                    else 
+                        chipertext += x;
+                }
+                else if (Character.isLowerCase(ch))
+                {
+                    char x = (char)(ch + text);
+                    if(x > 'z')
+                        chipertext += (char)(ch - (26 - text));
+                        else
+                        chipertext += x;
+                }
+            }else
+                chipertext += ch;
+        }
+return chipertext;
+    }     
+                }
